@@ -9,7 +9,8 @@ import { useEffect } from "react";
 import { Loader } from "lucide-react";
 import { Toaster } from "react-hot-toast";
 import { useThemeStore } from "./store/useThemeStore";
-import Navbar from "./components/NavBar";
+import Navbar from "./components/Navbar";
+
 
 function App() {
   const location = useLocation();
