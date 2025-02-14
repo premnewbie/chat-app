@@ -14,14 +14,12 @@ import Navbar from "./components/Navbar";
 
 function App() {
   const location = useLocation();
-  const {authUser,checkAuth, isCheckingAuth, onlineUsers} = useAuthStore();
+  const {authUser,checkAuth, isCheckingAuth} = useAuthStore();
   const {theme} = useThemeStore();
 
   useEffect(() => {
     checkAuth(location.pathname);
   },[checkAuth,location.pathname]);
-
-  console.log(onlineUsers)
 
   if(isCheckingAuth && !authUser && location.pathname!=="/login"){
     return (
