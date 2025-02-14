@@ -1,5 +1,4 @@
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
-import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
@@ -10,6 +9,7 @@ import { useEffect } from "react";
 import { Loader } from "lucide-react";
 import { Toaster } from "react-hot-toast";
 import { useThemeStore } from "./store/useThemeStore";
+import Navbar from "./components/NavBar";
 
 function App() {
   const location = useLocation();
@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div data-theme={theme}>
-      <NavBar />
+      <Navbar />
       <Routes>
         <Route path="/" element={authUser? <HomePage /> : <Navigate to="/login" />} />
         <Route path="/signup" element={!authUser ? <SignUpPage /> : <Navigate to="/" /> } />
